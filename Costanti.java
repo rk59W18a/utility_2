@@ -1,4 +1,4 @@
-package utility_2;
+package utility.parte2;
 
 import java.io.Serializable;
 
@@ -115,6 +115,8 @@ public class Costanti implements Serializable
 	public static final int VUOTO = 0;
 	
 	public static final int NUM_MASSIMO_RICERCA = 5;
+	
+    public static final String FORMATO_DATA = "dd/MM/yyyy";
 	
 	public static final String SCELTA_INTERROGAZIONE = "Quale delle seguenti interrogazioni desideri fare all'archivio?\n1-Numero di prestiti per anno solare\n2-Numero di proroghe per anno solare\n3-Risorsa piu' richiesta per anno solare\n4-Numero di prestiti per fruitore per anno solare\nDigitare un numero:\n";
 	public static final int NUM_MASSIMO_SCELTA = 4;

@@ -49,5 +49,4 @@ public class Data {
 	    DateTimeFormatter formatter = DateTimeFormatter.ofPattern(Costanti.FORMATO_DATA);
 	    return d.format(formatter);
 	}
-
 }

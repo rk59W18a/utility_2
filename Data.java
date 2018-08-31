@@ -37,7 +37,7 @@ public class Data {
 		return LocalDate.now();
 	}
 	
-	public static LocalDate getDataImpostata(int giorno, int mese, int anno) {
+	public static LocalDate getDataImpostata(int anno, int mese, int giorno) {
 		return LocalDate.of(anno, mese, giorno);
 	}
 	

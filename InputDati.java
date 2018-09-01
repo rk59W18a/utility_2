@@ -12,20 +12,20 @@ public class InputDati
 	private final static String ERRORE_MASSIMO= "Attenzione: e' richiesto un valore minore o uguale a ";
 	private final static String ERRORE_UGUALE= "Attenzione: e' richiesto un valore uguale a ";
 	private final static String MESSAGGIO_AMMISSIBILI= "Attenzione: i caratteri ammissibili sono: ";
-        
+
 	private static Scanner creaScanner ()
 	{
 		Scanner creato = new Scanner(System.in);
 		creato.useDelimiter(System.getProperty("line.separator"));
 		return creato;
 	}
-	   
+	
 	public static String leggiStringa (String messaggio)
 	{
 		System.out.print(messaggio);
 		return lettore.next();
 	}
-	 
+	
 	public static String leggiStringaNonVuota(String messaggio)
 	{
 		boolean finito=false;
@@ -33,13 +33,13 @@ public class InputDati
 	    
 	    do
 	    {
-	      	lettura = leggiStringa(messaggio);
-	      	lettura = lettura.trim();
+	    	lettura = leggiStringa(messaggio);
+	    	lettura = lettura.trim();
 	    	
-	      	if (lettura.length() > 0)
-	    		     finito=true;
-	      	else
-	    		     System.out.println(ERRORE_STRINGA_VUOTA);
+	    	if (lettura.length() > 0)
+	    		finito=true;
+	    	else
+	    		System.out.println(ERRORE_STRINGA_VUOTA);
 	    	
 	    } while (!finito);
 	   
@@ -78,44 +78,43 @@ public class InputDati
 	  
 	    do
 	    {
-	     	valoreLetto = leggiChar(messaggio);
-	     	valoreLetto = Character.toUpperCase(valoreLetto);
+	    	valoreLetto = leggiChar(messaggio);
+	    	valoreLetto = Character.toUpperCase(valoreLetto);
 	    	
-	    	    if (ammissibili.indexOf(valoreLetto) != -1)
-	    		     finito  = true;
-	      	else
-	    		     System.out.println(MESSAGGIO_AMMISSIBILI + ammissibili);
+	    	if (ammissibili.indexOf(valoreLetto) != -1)
+	    		finito  = true;
+	    	else
+	    		System.out.println(MESSAGGIO_AMMISSIBILI + ammissibili);
+	    	
+	    } while (!finito);
+	    
+	    return valoreLetto;
+	}
+	  
+	public static int leggiIntero (String messaggio)
+	{
+		boolean finito = false;
+	    int valoreLetto = 0;
+	    do
+	    {
+	    	System.out.print(messaggio);
+	    	
+	    	if (lettore.hasNextInt())
+	    	{
+	    		valoreLetto = lettore.nextInt();
+	    		finito = true;
+	    	}
+	    	else
+	    	{
+	    		System.out.println(ERRORE_FORMATO);
+	    		lettore.next();
+	    	}
 	    	
 	    } while (!finito);
 	    
 	    return valoreLetto;
 	}
 	
-	public static int leggiIntero (String messaggio)
-	{
-		boolean finito = false;
-	    int valoreLetto = 0;
-	    
-	    do
-	    {
-	    	   System.out.print(messaggio);
-	    	
-	    	   if (lettore.hasNextInt())
-	    	   {
-	    		 valoreLetto = lettore.nextInt();
-	    		 finito = true;
-	       }
-	    	   else
-	       {
-	    		 System.out.println(ERRORE_FORMATO);
-	    		 lettore.next();
-	       }
-	    	
-	    } while (!finito);
-	    
-	    return valoreLetto;
-	}
-
 	public static int leggiInteroConMinimo(String messaggio, int minimo)
 	{
 		boolean finito = false;
@@ -123,12 +122,12 @@ public class InputDati
 		
 	    do
 	    {
-	     	valoreLetto = leggiIntero(messaggio);
+	    	valoreLetto = leggiIntero(messaggio);
 	    	
-	      	if (valoreLetto >= minimo)
-	    		      finito = true;
-	     	else
-	    		      System.out.println(ERRORE_MINIMO + minimo);
+	    	if (valoreLetto >= minimo)
+	    		finito = true;
+	    	else
+	    		System.out.println(ERRORE_MINIMO + minimo);
 	    	
 	    } while (!finito);
 	     
@@ -142,16 +141,16 @@ public class InputDati
 	    
 	    do
 	    {
-	    	  valoreLetto = leggiIntero(messaggio);
+	    	valoreLetto = leggiIntero(messaggio);
 	    	
-	      if (valoreLetto >= minimo && valoreLetto<= massimo)
-	    		    finito = true;
-	    	  else if (valoreLetto < minimo && minimo != massimo)
-	    			     System.out.println(ERRORE_MINIMO + minimo);
-	      else if (valoreLetto > massimo && minimo != massimo)
-	    		         System.out.println(ERRORE_MASSIMO + massimo);
-	      else
-	    		  System.out.println(ERRORE_UGUALE + massimo);
+	    	if (valoreLetto >= minimo && valoreLetto<= massimo)
+	    		finito = true;
+	    	else if (valoreLetto < minimo && minimo != massimo)
+	    			System.out.println(ERRORE_MINIMO + minimo);
+	    	else if (valoreLetto > massimo && minimo != massimo)
+	    		System.out.println(ERRORE_MASSIMO + massimo);
+	    	else
+	    		System.out.println(ERRORE_UGUALE + massimo);
 	    	
 	    } while (!finito);
 	     
@@ -165,24 +164,23 @@ public class InputDati
 	    
 	    do
 	    {
-	     	System.out.print(messaggio);
+	    	System.out.print(messaggio);
 	    	
-	      	if (lettore.hasNextDouble())
-	    	    {
-	    		   valoreLetto = lettore.nextDouble();
-	    		   finito = true;
-	      	}
-	    	    else
-	      	{
-	    		   System.out.println(ERRORE_FORMATO);
-	    		   lettore.next();
-	      	}
-	      	
+	    	if (lettore.hasNextDouble())
+	    	{
+	    		valoreLetto = lettore.nextDouble();
+	    		finito = true;
+	    	}
+	    	else
+	    	{
+	    		System.out.println(ERRORE_FORMATO);
+	    		lettore.next();
+	    	}
 	    } while (!finito);
 	    
 	    return valoreLetto;
 	}
-	 
+	
 	public static double leggiDoubleConMinimo (String messaggio, double minimo)
 	{
 		boolean finito = false;
@@ -200,4 +198,5 @@ public class InputDati
 	     
 		return valoreLetto;
 	}
+	
 }

@@ -8,7 +8,7 @@ public class ServizioFile
 	private final static String MSG_NO_LETTURA = "ATTENZIONE: PROBLEMI CON LA LETTURA DEL FILE ";
 	private final static String MSG_NO_SCRITTURA = "ATTENZIONE: PROBLEMI CON LA SCRITTURA DEL FILE ";
 	private final static String MSG_NO_CHIUSURA ="ATTENZIONE: PROBLEMI CON LA CHIUSURA DEL FILE ";
-  
+
 	public static Object caricaSingoloOggetto (File f)   
     {
 	   Object letto = null;
@@ -79,4 +79,5 @@ public class ServizioFile
 			}
 		 } 
 	}
+	 
 }

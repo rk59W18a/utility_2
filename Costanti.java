@@ -115,11 +115,12 @@ public class Costanti implements Serializable
 	public static final int VUOTO = 0;
 	
 	public static final int NUM_MASSIMO_RICERCA = 5;
+	public static final int NUM_MASSIMO_SCELTA_INTERROGAZIONE = 4;
 	
-	 public static final String FORMATO_DATA = "dd/MM/yyyy";
+    public static final String FORMATO_DATA = "dd/MM/yyyy";
 	
 	public static final String SCELTA_INTERROGAZIONE = "Quale delle seguenti interrogazioni desideri fare all'archivio?\n1-Numero di prestiti per anno solare\n2-Numero di proroghe per anno solare\n3-Risorsa piu' richiesta per anno solare\n4-Numero di prestiti per fruitore per anno solare\nDigitare un numero:\n";
-	public static final int NUM_MASSIMO_SCELTA_INTERROGAZIONE = 4;
+	public static final int NUM_MASSIMO_SCELTA = 4;
 	public static final String INS_ANNO_RICHIESTO = "Inserisci l'anno:";
 	public static final int ANNO_MINIMO_INTERROGAZIONE = 1990;
 	public static final String INS_FRUITORE_RICHIESTO = "Inserisci lo username del fruitore: ";

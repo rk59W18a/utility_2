@@ -6,27 +6,26 @@ public class Menu implements Serializable
 {
 	private static final long serialVersionUID = 1L;
 	
-	private String titolo;
-	private String [] voci;
-	
 	public static final String CORNICE = "*************************************************************";
 	public static final String RICHIESTA_INSERIMENTO = "Digita il numero dell'opzione desiderata: ";
-	public static final int NUM_MINIMO_OPZIONE = 1;
 	
+	private String titolo;
+	private String [] voci;
+	   
 	public Menu(String titolo, String [] voci)
 	{
 		this.titolo  = titolo;
 		this.voci = voci;
 	}
-	
+
 	public int scegli()
     {
 		stampa();
- 	   	int opzione = InputDati.leggiIntero(RICHIESTA_INSERIMENTO, NUM_MINIMO_OPZIONE , voci.length);
+ 	   	int opzione = InputDati.leggiIntero(RICHIESTA_INSERIMENTO, Costanti.NUM_MINIMO, voci.length);
 		   
  	   	return opzione;
 	}
-	
+	   
 	public void stampa()
 	{
 		System.out.println(CORNICE);
